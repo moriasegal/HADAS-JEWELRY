@@ -31,6 +31,12 @@ function navIcon(){
 			$("#navHederLeft").slideToggle(400);
 		}		
 	});
+	$('.mainContainer').click(function(e){
+		if(($(window).outerWidth() < 769)&&($('#nav-icon4')[0].classList[0]=="open")){
+			$('#nav-icon4').toggleClass('open');
+			$("#navHederLeft").slideToggle(400);
+		}		
+	});
 	
 }
 
@@ -186,14 +192,40 @@ function buildGallery(category){
 
 //                 contact
 
-// Initialize and add the map
-function initMap() {
-  // The location of Uluru
-  var uluru = {lat: 31.6539396, lng: 35.2348847};
-  // The map, centered at Uluru
-  var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 11, center: uluru});
-  // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({position: uluru, map: map});
+// var map;
+
+// var initMap = function() {
+	// var template = 'http://{S}tile.openstreetmap.org/{Z}/{X}/{Y}.png';
+        // var subdomains = ['', 'a.', 'b.', 'c.'];
+        // var provider = new MM.TemplatedLayer(template, subdomains);
+
+	// map = new MM.Map('map', provider, null, [
+		// new MM.MouseWheelHandler(null, true)
+	// ]);
+
+	// map.setCenterZoom(new MM.Location(31.6539396, 35.2348847), 14);
+// }
+
+var initMap = function() {
+	var template = 'http://{S}tile.openstreetmap.org/{Z}/{X}/{Y}.png';
+	        var subdomains = ['', 'a.', 'b.', 'c.'];
+	        var provider = new MM.TemplatedLayer(template, subdomains);
+	
+	var map = new MM.Map('map', provider, null, [
+		new MM.MouseWheelHandler(null, true)
+	]);
+	
+	map.setCenterZoom(new MM.Location(31.6539396, 35.2348847), 12);
 }
+
+// Initialize and add the map
+// function initMap() {
+  // The location of Uluru
+  // var uluru = {lat: 31.6539396, lng: 35.2348847};
+  // The map, centered at Uluru
+  // var map = new google.maps.Map(
+      // document.getElementById('map'), {zoom: 11, center: uluru});
+  // The marker, positioned at Uluru
+  // var marker = new google.maps.Marker({position: uluru, map: map});
+// }
 

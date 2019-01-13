@@ -62,12 +62,9 @@ class ImgPopup extends Popup {
         }).appendTo(slideshowContainer);
 		
 		
-		console.log(slideIndex+"main");
 		this.popup.keydown(function (e) {
 			slideIndex = this.keySlide(slideIndex,e);
 		}.bind(this));
-		// slideIndex = this.touchSlide(slideIndex);
-		console.log(slideIndex+"touch");
 		var x1;
 		var x2;
 		var isChage = false;
@@ -75,16 +72,13 @@ class ImgPopup extends Popup {
 		slideshowContainer.on('touchstart', function(e) {
 			 x1 = e.touches[0].clientX;
 			 var touchlist = e.touches;
-			 console.log(touchlist);
 		});
 		slideshowContainer.on('touchmove', function(e) {
 			 x2 = e.changedTouches[0].clientX;
 			 isChage = true;
-			 console.log(x2+"ed");
 			 e.preventDefault()
 		});
 		slideshowContainer.on('touchend', function() {
-			 console.log(x2+""+"OOO");
 			 if((x1 < x2)&& isChage){
 				var index = this.plusSlides(-1, slideIndex);
 				slideIndex = index;
