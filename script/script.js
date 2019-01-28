@@ -158,6 +158,16 @@ function galleryActiveCategory(){
 		buildGallery(category);
 		
 	});
+	$('.galleryContainer').click(function(e){
+		if($('#selectGallery').css("display") == "block"){
+			$("#selectGallery").slideToggle(400);
+		}
+		// $('#gGallery span:first-child').text($(e.target).text());
+		// $("#selectGallery").slideToggle(400);
+		// let category = e.currentTarget.id;
+		// buildGallery(category);
+		
+	});
 }
 
 
@@ -191,20 +201,6 @@ function buildGallery(category){
 
 
 //                 contact
-
-// var map;
-
-// var initMap = function() {
-	// var template = 'http://{S}tile.openstreetmap.org/{Z}/{X}/{Y}.png';
-        // var subdomains = ['', 'a.', 'b.', 'c.'];
-        // var provider = new MM.TemplatedLayer(template, subdomains);
-
-	// map = new MM.Map('map', provider, null, [
-		// new MM.MouseWheelHandler(null, true)
-	// ]);
-
-	// map.setCenterZoom(new MM.Location(31.6539396, 35.2348847), 14);
-// }
 
 var initMap = function() {
 	var template = 'http://{S}tile.openstreetmap.org/{Z}/{X}/{Y}.png';
